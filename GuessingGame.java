@@ -6,48 +6,21 @@ public class GuessingGame {
         System.out.println("A random number has been generated...");
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a guess between 1 and 100");
-        int userAnswer = scanner.nextInt();
 
         // Guess 1
-        if (userAnswer <=0 || userAnswer >100) {
-            System.out.println("Invalid response");
-        }
-        else if (userAnswer == computerNumber ){
-            System.out.println("Correct! You win! See you next time!");
-            System.exit(0);
-        }
-        else if (userAnswer > computerNumber) {
-            System.out.println("Your guess is too high, guess again.");
-        }
-        else if (userAnswer < computerNumber) {
-            System.out.println("Your guess is too low, guess again.");
-        }
-        else {
-            System.out.println("Your guess is incorrect");
-        }
+        processGuess(computerNumber, scanner);
 
         // Guess 2
-        System.out.println("Enter a guess between 1 and 100");
-        userAnswer = scanner.nextInt();
-
-        if (userAnswer <=0 || userAnswer >100) {
-            System.out.println("Invalid response");
-        }
-        else if (userAnswer == computerNumber ){
-            System.out.println("Correct! You win! See you next time!");
-            System.exit(0);
-        }
-        else if (userAnswer > computerNumber) {
-            System.out.println("Your guess is too high, guess again.");
-        }
-        else if (userAnswer < computerNumber) {
-            System.out.println("Your guess is too low, guess again.");
-        }
-        else {
-            System.out.println("Your guess is incorrect");
-        }
+        processGuess(computerNumber, scanner);
 
         // Guess 3
+        processGuess(computerNumber, scanner);
+
+        System.out.println("Sorry for your luck, restart the program to play again!");
+    }
+
+    private static void processGuess(int computerNumber, Scanner scanner) {
+        int userAnswer;
         System.out.println("Enter a guess between 1 and 100");
         userAnswer = scanner.nextInt();
 
@@ -67,7 +40,5 @@ public class GuessingGame {
         else {
             System.out.println("Your guess is incorrect");
         }
-
-        System.out.println("Sorry for your luck, restart the program to play again!");
     }
 }
